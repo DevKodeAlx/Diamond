@@ -11,49 +11,55 @@ namespace DiamonPattern
     {
         static void Main(string[] args)
         {
-
-            int rows;
-
-            Console.WriteLine("Enter the number of rows for the diamond: ");
-            // "Parse" translates text to a usable format for the program. //
-            rows = int.Parse(Console.ReadLine());
-
-            // *** UPPER PART OF DIAMOND *** //
-
-            for (int i = 1; i <= rows; i++)
+            while (true) // This while loop will cause the program to run continuously. //
             {
-                // Prints spaces.//
-                for (int j = 1; j <= rows - i; j++)
-                {
-                    Console.Write(" ");
-                }
-                // Prints stars in the upper half of the diamond.//
-                for (int k = 1; k <= 2 * i - 1; k++)
-                {
-                    Console.Write("*");
-                }
+
+                int rows;
+                Console.Write("Enter the number of rows for the diamond: ");
+                
+                rows = int.Parse(Console.ReadLine()); // "Parse" translates text to a usable format for the program. //
                 Console.WriteLine();
-            }
-            
-            // *** LOWER PART OF DIAMOND *** //
-            for (int i = rows - 1; i >= 1; i--)
-            {
-                // Prints spaces.//
-                for (int j = 1; j <= rows - i; j++)
+
+                // *** UPPER PART OF DIAMOND *** //
+
+                for (int i = 1; i <= rows; i++)
                 {
-                    Console.Write(" ");
+                    // Prints spaces.//
+                    for (int j = 1; j <= rows - i; j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    // Prints stars in the upper half of the diamond.//
+                    for (int k = 1; k <= 2 * i - 1; k++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
                 }
-                // Prints the stars in the lower half of the diamond.//
-                for(int k = 1; k <= 2 * i - 1; k++)
+
+                // *** LOWER PART OF DIAMOND *** //
+                for (int i = rows - 1; i >= 1; i--)
                 {
-                    Console.Write("*");
+                    // Prints spaces.//
+                    for (int j = 1; j <= rows - i; j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    // Prints the stars in the lower half of the diamond.//
+                    for (int k = 1; k <= 2 * i - 1; k++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
                 }
-                Console.WriteLine();
+
+
+                Console.ReadLine();
+                Main(args); // Call the main function to start over. //
+
+
+
             }
-
-
-
         }
-       
     }
 }
